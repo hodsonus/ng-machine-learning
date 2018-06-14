@@ -16,7 +16,14 @@ p = zeros(m, 1);
 %
 
 
-
+% for i=1:m
+% 	if sigmoid( X*theta ) >= 0.5
+% 		p = 1;
+% 	else
+% 		p = 0;
+% 	end
+% end
+p = sigmoid( X*theta ) >= 0.5;
 
 
 
