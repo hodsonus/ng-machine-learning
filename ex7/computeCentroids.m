@@ -26,7 +26,23 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-
+%for each centroid
+for k=1:K
+	sumDist = zeros(n, 1);
+	numOfEntries = 0;
+	%for each example
+	%calculate sum of all distances belonging to this centroid
+	for i=1:m
+		if idx(i) == k
+			sumDist += X(i,:)';
+			numOfEntries++;
+		end
+	end
+	%compute new centroid value
+	if numOfEntries ~= 0;
+		centroids(k,:) = (sumDist/numOfEntries)';
+	end
+end 
 
 
 
